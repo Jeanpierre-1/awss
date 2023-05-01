@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Document</title>
+</head>
+<body  style="background-color:rgb(255, 255, 255)">
+
+  <div class="container-lg" style="margin-top: 50px;">
+    <div style="text-align: center;">
+      <h1>RECOMENDACIONES</h1>
+    </div>
+  <mat-grid-list cols="2" rowHeight="4em">
+    <mat-grid-tile>
+      <div style="text-align: right;">
+
+
+        <button mat-raised-button color="warn" routerLink="/recomendacion/registrar" >Nuevo</button>
+
+
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <input matInput (keyup)="filter($event)" placeholder="Buscar">
+      </mat-form-field>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+
+
+
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" style="background-color: #fef1f1;">
+
+        <!-- Id Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> ID </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+
+        <!-- ApellidoP Column -->
+        <ng-container matColumnDef="valoracion_user" >
+          <th mat-header-cell *matHeaderCellDef> valoracion_user </th>
+          <td mat-cell *matCellDef="let element">
+            <ng-container [ngSwitch]="element.valoracion_user">
+              <ng-container *ngSwitchCase="5">
+                <span class="ver fa fa-star"  style="color: rgb(255, 225, 0);" id="1estrella" ></span>
+                <span class="ver fa fa-star"  style="color: rgb(255, 225, 0);" id="2estrella" ></span>
+                <span class="ver fa fa-star"  style="color: rgb(255, 225, 0);" id="3estrella" ></span>
+                <span class="ver fa fa-star"  style="color: rgb(255, 225, 0);" id="4estrella" ></span>
+                <span class="ver fa fa-star"  style="color: rgb(255, 225, 0);" id="5estrella" ></span>
+                {{element.valoracion_user}}
+
+              </ng-container>
+              <ng-container *ngSwitchCase="4" >
+                <span class="ver fa fa-star"  style="color: rgb(255, 225, 0);" id="1estrella" ></span>
+                <span class="ver fa fa-star"  style="color: rgb(255, 225, 0);" id="2estrella" ></span>
+                <span class="ver fa fa-star"  style="color: rgb(255, 225, 0);" id="3estrella" ></span>
+                <span class="ver fa fa-star"  style="color: rgb(255, 225, 0);" id="4estrella" ></span>
+                <span class="ver fa fa-star"  style="color: rgb(0, 0, 0);" id="5estrella" ></span>
+                {{element.valoracion_user}}
+              </ng-container>
+              <ng-container *ngSwitchCase="3">
+                <span class="ver fa fa-star"  style="color: rgb(255, 225, 0);" id="1estrella" ></span>
+                <span class="ver fa fa-star"  style="color: rgb(255, 225, 0);" id="2estrella" ></span>
+                <span class="ver fa fa-star"  style="color: rgb(255, 225, 0);" id="3estrella" ></span>
+                <span class="ver fa fa-star"  style="color: rgb(0, 0, 0);" id="4estrella" ></span>
+                <span class="ver fa fa-star"  style="color: rgb(7, 7, 7);" id="5estrella" ></span>
+                {{element.valoracion_user}}
+              </ng-container>
+              <ng-container *ngSwitchCase="2">
+                <span class="ver fa fa-star"  style="color: rgb(255, 225, 0);" id="1estrella" ></span>
+                <span class="ver fa fa-star"  style="color: rgb(255, 225, 0);" id="2estrella" ></span>
+                <span class="ver fa fa-star"  style="color: rgb(0, 0, 0);" id="3estrella" ></span>
+                <span class="ver fa fa-star"  style="color: rgb(0, 0, 0);" id="4estrella" ></span>
+                <span class="ver fa fa-star"  style="color: rgb(0, 0, 0);" id="5estrella" ></span>
+                {{element.valoracion_user}}
+              </ng-container>
+              <ng-container *ngSwitchCase="1">
+                <span class="ver fa fa-star"  style="color: rgb(255, 225, 0);" id="1estrella" ></span>
+                <span class="ver fa fa-star"  style="color: rgb(0, 0, 0);" id="2estrella" ></span>
+                <span class="ver fa fa-star"  style="color: rgb(0, 0, 0);" id="3estrella" ></span>
+                <span class="ver fa fa-star"  style="color: rgb(0, 0, 0);" id="4estrella" ></span>
+                <span class="ver fa fa-star"  style="color: rgb(0, 0, 0);" id="5estrella" ></span>
+                {{element.valoracion_user}}
+              </ng-container>
+              <ng-container *ngSwitchCase="0">
+                <span class="ver fa fa-star"  style="color: rgb(0, 0, 0);" id="1estrella" ></span>
+                <span class="ver fa fa-star"  style="color: rgb(0, 0, 0);" id="2estrella" ></span>
+                <span class="ver fa fa-star"  style="color: rgb(0, 0, 0);" id="3estrella" ></span>
+                <span class="ver fa fa-star"  style="color: rgb(0, 0, 0);" id="4estrella" ></span>
+                <span class="ver fa fa-star"  style="color: rgb(0, 0, 0);" id="5estrella" ></span>
+                {{element.valoracion_user}}
+              </ng-container>
+            </ng-container>
+
+
+
+
+
+
+
+            </td>
+        </ng-container>
+
+
+        <!-- ApellidoM Column -->
+        <ng-container matColumnDef="notas_adicionales">
+          <th mat-header-cell *matHeaderCellDef> Notas Adicionales </th>
+          <td mat-cell *matCellDef="let element"> {{element.notas_adicionales}} </td>
+        </ng-container>
+
+
+
+        <ng-container matColumnDef="accion01">
+          <th mat-header-cell *matHeaderCellDef> Acciones </th>
+          <td mat-cell *matCellDef="let element">
+          <button mat-raised-button color="warn"
+              [routerLink]="['/recomendacion/editar',element.id]"><i class="fa-solid fa-rotate" style="color: #ffffff;"></i></button>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="accion2">
+          <th mat-header-cell *matHeaderCellDef> Acciones </th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-raised-button color="warn" (click)="confirm(element.id)"><span class="material-icons">delete</span></button>
+          </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" style="background-color: #f4e4e4;"
+                     showFirstLastButtons
+                     aria-label="Select page of  periodicelements">
+      </mat-paginator>
+    </div>
+  </div>
+
+</body>
+</html>
